@@ -1924,98 +1924,98 @@ a { color: inherit; text-decoration: none; }
 
 .hero-logo-stage--ai .official-logo {
   animation: logoPulseAi 6.8s ease-in-out infinite !important;
-  filter: brightness(1.72) contrast(1.16) saturate(1.10)
-    drop-shadow(0 0 9px rgba(255,235,214,.10))
-    drop-shadow(0 0 16px rgba(180,46,32,.16))
-    drop-shadow(0 0 22px rgba(210,120,46,.12)) !important;
+  filter: brightness(1.56) contrast(1.14) saturate(1.08)
+    drop-shadow(0 0 8px rgba(255,235,214,.08))
+    drop-shadow(0 0 14px rgba(180,46,32,.14))
+    drop-shadow(0 0 19px rgba(210,120,46,.10)) !important;
 }
 
 .hero-medallion-face {
   animation: logoPulseArt 6.8s ease-in-out infinite !important;
-  filter: brightness(0.96) contrast(1.06) saturate(1.02)
-    drop-shadow(0 0 8px rgba(255,225,196,.08))
-    drop-shadow(0 0 15px rgba(170,42,30,.13))
-    drop-shadow(0 0 20px rgba(200,112,44,.10)) !important;
+  filter: brightness(0.86) contrast(1.05) saturate(1.01)
+    drop-shadow(0 0 7px rgba(255,225,196,.07))
+    drop-shadow(0 0 13px rgba(170,42,30,.11))
+    drop-shadow(0 0 17px rgba(200,112,44,.09)) !important;
 }
 
 .hero-crest__face {
   animation: logoPulseBrand 6.8s ease-in-out infinite !important;
-  filter: brightness(1.24) contrast(1.08) saturate(1.04)
-    drop-shadow(0 0 9px rgba(255,226,198,.10))
-    drop-shadow(0 0 16px rgba(176,46,34,.15))
-    drop-shadow(0 0 22px rgba(208,118,48,.12)) !important;
+  filter: brightness(1.10) contrast(1.07) saturate(1.03)
+    drop-shadow(0 0 8px rgba(255,226,198,.08))
+    drop-shadow(0 0 14px rgba(176,46,34,.13))
+    drop-shadow(0 0 19px rgba(208,118,48,.10)) !important;
 }
 
 @keyframes logoPulseAi {
   0%, 100% {
     transform: scale(0.985);
-    filter: brightness(1.64) contrast(1.15) saturate(1.08)
-      drop-shadow(0 0 7px rgba(255,236,216,.09))
-      drop-shadow(0 0 12px rgba(156,34,26,.12))
-      drop-shadow(0 0 16px rgba(178,96,34,.09));
+    filter: brightness(1.48) contrast(1.13) saturate(1.06)
+      drop-shadow(0 0 6px rgba(255,236,216,.08))
+      drop-shadow(0 0 10px rgba(156,34,26,.10))
+      drop-shadow(0 0 14px rgba(178,96,34,.08));
   }
   50% {
     transform: scale(1.035);
-    filter: brightness(1.82) contrast(1.17) saturate(1.10)
-      drop-shadow(0 0 10px rgba(255,240,222,.13))
-      drop-shadow(0 0 18px rgba(194,46,30,.20))
-      drop-shadow(0 0 26px rgba(228,134,42,.16));
+    filter: brightness(1.66) contrast(1.15) saturate(1.08)
+      drop-shadow(0 0 8px rgba(255,240,222,.11))
+      drop-shadow(0 0 16px rgba(194,46,30,.17))
+      drop-shadow(0 0 22px rgba(228,134,42,.13));
   }
 }
 
 @keyframes logoPulseArt {
   0%, 100% {
     transform: scale(0.985);
-    filter: brightness(0.92) contrast(1.05) saturate(1.0)
-      drop-shadow(0 0 6px rgba(255,230,204,.06))
-      drop-shadow(0 0 11px rgba(150,34,26,.09))
-      drop-shadow(0 0 14px rgba(170,94,36,.07));
+    filter: brightness(0.82) contrast(1.04) saturate(1.0)
+      drop-shadow(0 0 5px rgba(255,230,204,.05))
+      drop-shadow(0 0 9px rgba(150,34,26,.08))
+      drop-shadow(0 0 12px rgba(170,94,36,.06));
   }
   50% {
     transform: scale(1.03);
-    filter: brightness(1.02) contrast(1.07) saturate(1.02)
-      drop-shadow(0 0 9px rgba(255,236,214,.10))
-      drop-shadow(0 0 16px rgba(186,44,30,.16))
-      drop-shadow(0 0 21px rgba(218,126,44,.12));
+    filter: brightness(0.92) contrast(1.06) saturate(1.01)
+      drop-shadow(0 0 7px rgba(255,236,214,.08))
+      drop-shadow(0 0 14px rgba(186,44,30,.14))
+      drop-shadow(0 0 18px rgba(218,126,44,.10));
   }
 }
 
 @keyframes logoPulseBrand {
   0%, 100% {
     transform: scale(0.985);
-    filter: brightness(1.18) contrast(1.07) saturate(1.02)
-      drop-shadow(0 0 7px rgba(255,231,206,.08))
-      drop-shadow(0 0 12px rgba(152,36,28,.11))
-      drop-shadow(0 0 16px rgba(174,98,38,.09));
+    filter: brightness(1.06) contrast(1.06) saturate(1.01)
+      drop-shadow(0 0 6px rgba(255,231,206,.07))
+      drop-shadow(0 0 10px rgba(152,36,28,.10))
+      drop-shadow(0 0 14px rgba(174,98,38,.08));
   }
   50% {
     transform: scale(1.03);
-    filter: brightness(1.30) contrast(1.08) saturate(1.04)
-      drop-shadow(0 0 10px rgba(255,236,214,.12))
-      drop-shadow(0 0 18px rgba(188,46,32,.19))
-      drop-shadow(0 0 24px rgba(222,130,46,.15));
+    filter: brightness(1.16) contrast(1.07) saturate(1.02)
+      drop-shadow(0 0 8px rgba(255,236,214,.10))
+      drop-shadow(0 0 16px rgba(188,46,32,.16))
+      drop-shadow(0 0 20px rgba(222,130,46,.12));
   }
 }
 
 @media (max-width: 900px) {
   .hero-logo-stage--ai .official-logo {
-    filter: brightness(1.92) contrast(1.16) saturate(1.10)
-      drop-shadow(0 0 7px rgba(255,236,216,.09))
-      drop-shadow(0 0 14px rgba(180,46,32,.15))
-      drop-shadow(0 0 18px rgba(210,120,46,.11)) !important;
+    filter: brightness(1.70) contrast(1.14) saturate(1.08)
+      drop-shadow(0 0 6px rgba(255,236,216,.08))
+      drop-shadow(0 0 12px rgba(180,46,32,.13))
+      drop-shadow(0 0 16px rgba(210,120,46,.10)) !important;
   }
 
   .hero-medallion-face {
-    filter: brightness(1.02) contrast(1.05) saturate(1.01)
-      drop-shadow(0 0 6px rgba(255,230,204,.06))
-      drop-shadow(0 0 12px rgba(170,42,30,.12))
-      drop-shadow(0 0 16px rgba(200,112,44,.09)) !important;
+    filter: brightness(0.90) contrast(1.05) saturate(1.0)
+      drop-shadow(0 0 5px rgba(255,230,204,.05))
+      drop-shadow(0 0 10px rgba(170,42,30,.10))
+      drop-shadow(0 0 14px rgba(200,112,44,.08)) !important;
   }
 
   .hero-crest__face {
-    filter: brightness(1.42) contrast(1.07) saturate(1.03)
-      drop-shadow(0 0 7px rgba(255,231,206,.08))
-      drop-shadow(0 0 14px rgba(176,46,34,.14))
-      drop-shadow(0 0 18px rgba(208,118,48,.11)) !important;
+    filter: brightness(1.24) contrast(1.06) saturate(1.02)
+      drop-shadow(0 0 6px rgba(255,231,206,.07))
+      drop-shadow(0 0 12px rgba(176,46,34,.12))
+      drop-shadow(0 0 16px rgba(208,118,48,.10)) !important;
   }
 }
