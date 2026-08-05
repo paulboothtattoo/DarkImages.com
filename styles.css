@@ -1949,14 +1949,14 @@ a { color: inherit; text-decoration: none; }
 @keyframes logoPulseAi {
   0%, 100% {
     transform: scale(0.985);
-    filter: brightness(1.48) contrast(1.13) saturate(1.06)
+    filter: brightness(1.00) contrast(1.13) saturate(1.06)
       drop-shadow(0 0 6px rgba(255,236,216,.08))
       drop-shadow(0 0 10px rgba(156,34,26,.10))
       drop-shadow(0 0 14px rgba(178,96,34,.08));
   }
   50% {
     transform: scale(1.035);
-    filter: brightness(1.66) contrast(1.15) saturate(1.08)
+    filter: brightness(1.36) contrast(1.15) saturate(1.08)
       drop-shadow(0 0 8px rgba(255,240,222,.11))
       drop-shadow(0 0 16px rgba(194,46,30,.17))
       drop-shadow(0 0 22px rgba(228,134,42,.13));
@@ -1966,7 +1966,7 @@ a { color: inherit; text-decoration: none; }
 @keyframes logoPulseArt {
   0%, 100% {
     transform: scale(0.985);
-    filter: brightness(0.82) contrast(1.04) saturate(1.0)
+    filter: brightness(0.62) contrast(1.04) saturate(1.0)
       drop-shadow(0 0 5px rgba(255,230,204,.05))
       drop-shadow(0 0 9px rgba(150,34,26,.08))
       drop-shadow(0 0 12px rgba(170,94,36,.06));
