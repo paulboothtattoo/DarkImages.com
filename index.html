@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>darkimages.com</title>
+  <meta name="description" content="darkimages.com — a unified gateway to PaulBooth.ai, PaulBoothArt.com, and PaulBoothBrand.com." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Michroma&family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=logo-darker-20260805h" />
+  <style>
+    html, body { background: #000 !important; }
+    .page-transition {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #000;
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity .45s ease;
+    }
+    .page-transition.is-ready { opacity: 0; }
+    .page-transition.is-leaving { opacity: 1; pointer-events: auto; }
+  </style>
+</head>
+<body>
+  <div class="page-transition" aria-hidden="true"></div>
+  <svg class="morph-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="faceMorphFilter" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence id="faceMorphNoise" type="fractalNoise" baseFrequency="0.007 0.0105" numOctaves="3" seed="7" result="noise"/>
+      <feDisplacementMap id="faceMorphDisplace" in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="B"/>
+    </filter>
+  </svg>
+  <main class="darkimages-site" aria-label="darkimages.com unified gateway">
+    <div class="site-badge" aria-hidden="true">
+      <span>DARKIMAGES.COM</span>
+      <i></i>
+      <span>THREE REALMS</span>
+    </div>
+
+    <section class="hero-hub" aria-label="Three sites hub">
+      <div class="hero-artwork" aria-hidden="true">
+        <div class="background-sphere">
+          <div class="background-sphere-depth"></div>
+          <div class="background-sphere-rim"></div>
+          <img src="assets/witches-bg.png" alt="" class="hero-artwork-image" />
+          <div class="background-sphere-glass"></div>
+        </div>
+      </div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-fog hero-fog-one" aria-hidden="true"></div>
+      <div class="hero-fog hero-fog-two" aria-hidden="true"></div>
+      <div class="hero-noise" aria-hidden="true"></div>
+
+      <div class="portal-links" aria-label="Choose a destination">
+        <a class="portal-link portal-link--ai" href="https://paulbooth.ai/" aria-label="Open PaulBooth.ai">
+          <div class="hero-logo-stage hero-logo-stage--ai">
+            <div class="hero-logo-glow" aria-hidden="true"></div>
+            <div class="ai-sphere" aria-hidden="true">
+              <div class="ai-logo-fill" aria-hidden="true"></div>
+              <img class="official-logo" src="assets/paulbooth-ai-logo-transparent-local.png" alt="PaulBooth.ai official biomechanical logo" />
+            </div>
+          </div>
+          <span class="portal-caption">PaulBooth.ai</span>
+        </a>
+
+        <a class="portal-link portal-link--art" href="https://paulboothart.com/" aria-label="Open PaulBoothArt.com">
+          <div class="hero-logo-stage hero-logo-stage--sigil">
+            <div class="hero-red-flicker" aria-hidden="true"></div>
+            <div class="hero-logo-orbit hero-logo-orbit--far" aria-hidden="true"></div>
+            <div class="hero-logo-orbit hero-logo-orbit--outer" aria-hidden="true"></div>
+            <div class="hero-logo-orbit hero-logo-orbit--mid" aria-hidden="true"></div>
+            <div class="hero-logo-orbit hero-logo-orbit--inner" aria-hidden="true"></div>
+            <div class="hero-orbital-nodes hero-orbital-nodes--one" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="hero-orbital-nodes hero-orbital-nodes--two" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="hero-orbital-nodes hero-orbital-nodes--three" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="hero-logo-aura" aria-hidden="true"></div>
+            <div class="hero-logo-plinth" aria-hidden="true"></div>
+            <div class="hero-medallion" aria-label="Paul Booth Art emblem">
+              <img class="hero-medallion-face" src="https://paulboothart.com/assets/hero-logo-requested-exact.png" alt="PaulBoothArt.com official logo" />
+            </div>
+          </div>
+          <span class="portal-caption">PaulBoothArt.com</span>
+        </a>
+
+        <a class="portal-link portal-link--brand" href="https://paulboothbrand.com/" aria-label="Open PaulBoothBrand.com">
+          <div class="hero-crest" aria-label="PaulBoothBrand crest">
+            <div class="hero-crest__flicker" aria-hidden="true"></div>
+            <div class="hero-crest__aura" aria-hidden="true"></div>
+            <div class="hero-crest__shadow" aria-hidden="true"></div>
+            <div class="hero-crest__orbit hero-crest__orbit--far" aria-hidden="true"></div>
+            <div class="hero-crest__orbit hero-crest__orbit--outer" aria-hidden="true"></div>
+            <div class="hero-crest__orbit hero-crest__orbit--mid" aria-hidden="true"></div>
+            <div class="hero-crest__orbit hero-crest__orbit--inner" aria-hidden="true"></div>
+            <div class="hero-crest__nodes hero-crest__nodes--one" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="hero-crest__nodes hero-crest__nodes--two" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="hero-crest__nodes hero-crest__nodes--three" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="hero-crest__medallion">
+              <img class="hero-crest__face" src="assets/pb-brand-monogram-cutout.png" alt="PaulBoothBrand.com emblem" />
+            </div>
+          </div>
+          <span class="portal-caption">PaulBoothBrand.com</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <script src="script.js?v=logo-darker-20260805h"></script>
+</body>
+</html>
