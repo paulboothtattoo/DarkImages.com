@@ -844,6 +844,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 0 1px rgba(255,255,255,.05) inset, 0 16px 34px rgba(0,0,0,.58), inset 0 -10px 18px rgba(0,0,0,.3);
 }
 .ai-logo-fill {
+  display: none !important;
   position: absolute;
   inset: 11%;
   z-index: 2;
@@ -854,8 +855,8 @@ a { color: inherit; text-decoration: none; }
   background:
     radial-gradient(circle at 50% 20%, rgba(58,36,33,.72), rgba(34,20,19,.86) 22%, rgba(78,14,14,.58) 42%, rgba(36,8,8,.46) 62%, rgba(0,0,0,0) 100%),
     linear-gradient(180deg, rgba(42,26,24,.88) 0%, rgba(26,16,16,.92) 34%, rgba(64,14,14,.76) 62%, rgba(22,8,8,.68) 100%);
-  -webkit-mask-image: url('assets/paulbooth-ai-logo-new.png');
-  mask-image: url('assets/paulbooth-ai-logo-new.png');
+  -webkit-mask-image: url('assets/paulbooth-ai-logo-swapped.png');
+  mask-image: url('assets/paulbooth-ai-logo-swapped.png');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -1115,6 +1116,7 @@ a { color: inherit; text-decoration: none; }
 
   .hero-logo-stage--ai .official-logo,
   .hero-logo-stage--ai .ai-logo-fill {
+  display: none !important;
     filter:
       brightness(1.62)
       contrast(1.28)
@@ -1930,10 +1932,10 @@ a { color: inherit; text-decoration: none; }
 
 .hero-medallion-face {
   animation: logoPulseArt 6.8s ease-in-out infinite !important;
-  filter: brightness(1.08) contrast(1.06) saturate(1.03)
-    drop-shadow(0 0 9px rgba(255,225,196,.09))
-    drop-shadow(0 0 16px rgba(170,42,30,.14))
-    drop-shadow(0 0 22px rgba(200,112,44,.11)) !important;
+  filter: brightness(0.96) contrast(1.06) saturate(1.02)
+    drop-shadow(0 0 8px rgba(255,225,196,.08))
+    drop-shadow(0 0 15px rgba(170,42,30,.13))
+    drop-shadow(0 0 20px rgba(200,112,44,.10)) !important;
 }
 
 .hero-crest__face {
@@ -1964,17 +1966,17 @@ a { color: inherit; text-decoration: none; }
 @keyframes logoPulseArt {
   0%, 100% {
     transform: scale(0.985);
-    filter: brightness(1.02) contrast(1.05) saturate(1.01)
-      drop-shadow(0 0 7px rgba(255,230,204,.07))
-      drop-shadow(0 0 12px rgba(150,34,26,.10))
-      drop-shadow(0 0 16px rgba(170,94,36,.08));
+    filter: brightness(0.92) contrast(1.05) saturate(1.0)
+      drop-shadow(0 0 6px rgba(255,230,204,.06))
+      drop-shadow(0 0 11px rgba(150,34,26,.09))
+      drop-shadow(0 0 14px rgba(170,94,36,.07));
   }
   50% {
     transform: scale(1.03);
-    filter: brightness(1.12) contrast(1.07) saturate(1.03)
-      drop-shadow(0 0 10px rgba(255,236,214,.11))
-      drop-shadow(0 0 18px rgba(186,44,30,.18))
-      drop-shadow(0 0 24px rgba(218,126,44,.14));
+    filter: brightness(1.02) contrast(1.07) saturate(1.02)
+      drop-shadow(0 0 9px rgba(255,236,214,.10))
+      drop-shadow(0 0 16px rgba(186,44,30,.16))
+      drop-shadow(0 0 21px rgba(218,126,44,.12));
   }
 }
 
@@ -2004,10 +2006,10 @@ a { color: inherit; text-decoration: none; }
   }
 
   .hero-medallion-face {
-    filter: brightness(1.18) contrast(1.05) saturate(1.02)
-      drop-shadow(0 0 7px rgba(255,230,204,.07))
-      drop-shadow(0 0 14px rgba(170,42,30,.13))
-      drop-shadow(0 0 18px rgba(200,112,44,.10)) !important;
+    filter: brightness(1.02) contrast(1.05) saturate(1.01)
+      drop-shadow(0 0 6px rgba(255,230,204,.06))
+      drop-shadow(0 0 12px rgba(170,42,30,.12))
+      drop-shadow(0 0 16px rgba(200,112,44,.09)) !important;
   }
 
   .hero-crest__face {
