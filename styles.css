@@ -2019,3 +2019,122 @@ a { color: inherit; text-decoration: none; }
       drop-shadow(0 0 16px rgba(208,118,48,.10)) !important;
   }
 }
+
+/* =========================================================
+   BLACK + SEPIA LOGOS WITH DEEP OXBLOOD BACKLIGHT
+   Build: 20260806-black-sepia-oxblood-glow-v3
+   ========================================================= */
+.hero-logo-stage--ai,
+.hero-logo-stage--sigil,
+.hero-crest {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+}
+
+.hero-logo-stage--ai::before,
+.hero-logo-stage--sigil::before,
+.hero-crest::before {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: .74 !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 84% !important;
+  height: 84% !important;
+  transform: translate(-50%, -50%) scale(.92) !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(118, 18, 10, .48) 0%,
+      rgba(92, 18, 12, .34) 26%,
+      rgba(64, 16, 12, .22) 50%,
+      rgba(28, 10, 8, .10) 66%,
+      rgba(0, 0, 0, 0) 78%) !important;
+  box-shadow:
+    0 0 16px rgba(108, 20, 12, .34),
+    0 0 38px rgba(78, 18, 12, .26),
+    0 0 74px rgba(52, 14, 10, .18) !important;
+  filter: blur(5px) !important;
+  animation: pbBloodBacklight 6.2s ease-in-out infinite !important;
+}
+
+.ai-sphere,
+.hero-medallion,
+.hero-crest__medallion {
+  z-index: 2 !important;
+}
+
+.hero-logo-stage--ai .official-logo,
+.hero-medallion-face,
+.hero-crest__face {
+  z-index: 3 !important;
+  filter:
+    grayscale(.38)
+    sepia(.72)
+    saturate(.72)
+    contrast(1.34)
+    brightness(.94)
+    drop-shadow(0 2px 1px rgba(0,0,0,.95))
+    drop-shadow(0 0 3px rgba(245,232,208,.08))
+    drop-shadow(0 0 10px rgba(92,18,12,.24))
+    drop-shadow(0 0 20px rgba(56,12,10,.18)) !important;
+  animation: pbMonochromeLogoBreath 6.2s ease-in-out infinite !important;
+}
+
+@keyframes pbBloodBacklight {
+  0%, 100% {
+    opacity: .56;
+    transform: translate(-50%, -50%) scale(.90);
+    filter: blur(5px);
+  }
+  45% {
+    opacity: .82;
+    transform: translate(-50%, -50%) scale(1.00);
+    filter: blur(7px);
+  }
+  52% {
+    opacity: .68;
+  }
+  58% {
+    opacity: .80;
+  }
+}
+
+@keyframes pbMonochromeLogoBreath {
+  0%, 100% {
+    transform: scale(.985);
+    filter:
+      grayscale(.42) sepia(.68) saturate(.66) contrast(1.32) brightness(.90)
+      drop-shadow(0 2px 1px rgba(0,0,0,.95))
+      drop-shadow(0 0 2px rgba(238,226,202,.08))
+      drop-shadow(0 0 8px rgba(88,18,12,.22))
+      drop-shadow(0 0 16px rgba(48,12,10,.16));
+  }
+  50% {
+    transform: scale(1.03);
+    filter:
+      grayscale(.34) sepia(.78) saturate(.76) contrast(1.4) brightness(1.02)
+      drop-shadow(0 2px 1px rgba(0,0,0,.95))
+      drop-shadow(0 0 4px rgba(244,230,204,.12))
+      drop-shadow(0 0 12px rgba(102,20,12,.30))
+      drop-shadow(0 0 24px rgba(58,14,10,.22));
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-logo-stage--ai::before,
+  .hero-logo-stage--sigil::before,
+  .hero-crest::before {
+    width: 90% !important;
+    height: 90% !important;
+    box-shadow:
+      0 0 14px rgba(108, 20, 12, .34),
+      0 0 30px rgba(78, 18, 12, .24),
+      0 0 54px rgba(52, 14, 10, .17) !important;
+  }
+}
