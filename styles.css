@@ -322,9 +322,9 @@ a { color: inherit; text-decoration: none; }
 .portal-link:nth-child(2)::before { animation-delay: -1.9s; }
 .portal-link:nth-child(3)::before { animation-delay: -3.6s; }
 .portal-link > * { position: relative; z-index: 1; }
-.portal-link--ai { left: 10.5%; top: 58%; }
-.portal-link--art { left: 50%; top: 61%; transform: translateX(-50%); }
-.portal-link--art:hover, .portal-link--art:focus-visible { transform: translateX(-50%) translateY(-10px) scale(1.02); }
+.portal-link--art { left: 10.5%; top: 58%; }
+.portal-link--ai { left: 50%; top: 61%; transform: translateX(-50%); }
+.portal-link--ai:hover, .portal-link--ai:focus-visible { transform: translateX(-50%) translateY(-10px) scale(1.02); }
 .portal-link--brand { right: 10.5%; top: 58%; }
 
 .portal-caption {
@@ -656,8 +656,8 @@ a { color: inherit; text-decoration: none; }
   .hero-artwork::before { width: min(102vw, 1120px); }
   .hero-artwork::after { width: min(108vw, 1180px); }
   .background-sphere { width: min(90vw, 980px); }
-  .portal-link--ai { left: 6%; top: 60%; }
-  .portal-link--art { left: 50%; top: 61%; transform: translateX(-50%); }
+  .portal-link--art { left: 6%; top: 60%; }
+  .portal-link--ai { left: 50%; top: 61%; transform: translateX(-50%); }
   .portal-link--brand { right: 6%; top: 60%; }
 }
 
@@ -720,11 +720,11 @@ a { color: inherit; text-decoration: none; }
     padding-bottom: 14px;
   }
   .portal-link,
-  .portal-link--art,
+  .portal-link--ai,
   .portal-link:hover,
   .portal-link:focus-visible,
-  .portal-link--art:hover,
-  .portal-link--art:focus-visible {
+  .portal-link--ai:hover,
+  .portal-link--ai:focus-visible {
     position: relative;
     left: auto; right: auto; top: auto; bottom: auto;
     transform: none;
