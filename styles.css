@@ -2192,3 +2192,81 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+/* =========================================================
+   DARKIMAGES.COM — PAULBOOTHART.COM CRIMSON LOGO SWAP
+   2026-08-07
+   Preserve the supplied crimson satin logo rather than applying
+   the older site-wide monochrome/sepia conversion.
+   ========================================================= */
+.hero-logo-stage--sigil .hero-medallion-face {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  mix-blend-mode: normal !important;
+  z-index: 20 !important;
+  filter:
+    brightness(1.03)
+    contrast(1.08)
+    saturate(1.06)
+    drop-shadow(0 0 7px rgba(255, 220, 210, .12))
+    drop-shadow(0 0 16px rgba(148, 22, 22, .20))
+    drop-shadow(0 0 28px rgba(82, 10, 10, .18)) !important;
+  animation: pbArtCrimsonSwapBreath 6.6s ease-in-out infinite !important;
+}
+
+@keyframes pbArtCrimsonSwapBreath {
+  0%, 100% {
+    transform: scale(.985);
+    filter:
+      brightness(.98)
+      contrast(1.07)
+      saturate(1.04)
+      drop-shadow(0 0 6px rgba(255, 220, 210, .10))
+      drop-shadow(0 0 13px rgba(138, 18, 18, .17))
+      drop-shadow(0 0 22px rgba(72, 8, 8, .14));
+  }
+  50% {
+    transform: scale(1.025);
+    filter:
+      brightness(1.08)
+      contrast(1.10)
+      saturate(1.10)
+      drop-shadow(0 0 10px rgba(255, 226, 216, .16))
+      drop-shadow(0 0 20px rgba(172, 28, 24, .26))
+      drop-shadow(0 0 34px rgba(90, 10, 10, .22));
+  }
+}
+
+@media screen and (max-width: 900px), screen and (pointer: coarse) {
+  .portal-link--art,
+  .hero-logo-stage--sigil,
+  .hero-logo-stage--sigil .hero-medallion,
+  .hero-logo-stage--sigil .hero-medallion-face {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .hero-logo-stage--sigil .hero-medallion-face {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    filter:
+      brightness(1.06)
+      contrast(1.08)
+      saturate(1.08)
+      drop-shadow(0 0 6px rgba(255, 220, 210, .12))
+      drop-shadow(0 0 15px rgba(154, 22, 20, .22))
+      drop-shadow(0 0 26px rgba(76, 8, 8, .18)) !important;
+  }
+}
+
