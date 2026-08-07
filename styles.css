@@ -2364,3 +2364,40 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+
+/* =========================================================
+   DARKIMAGES.COM — MOBILE HERO TOP-GAP FIX
+   2026-08-07
+   Later mobile rules were positioning the background at 18–20%
+   vertically, which can leave visible black space above the
+   background image on tall phone viewports.
+   ========================================================= */
+@media screen and (max-width: 900px), screen and (pointer: coarse) {
+  html,
+  body,
+  .darkimages-site,
+  .hero-hub {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .darkimages-site {
+    background-position: center top !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .hero-hub,
+  .hero-artwork {
+    top: 0 !important;
+  }
+}
+
+/* Keep the tighter phone composition but pin it to the very top. */
+@media screen and (max-width: 560px) {
+  .darkimages-site {
+    background-position: center top !important;
+    background-size: cover !important;
+  }
+}
+
