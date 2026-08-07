@@ -2270,3 +2270,97 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+
+/* =========================================================
+   DARKIMAGES.COM — FINAL ABSOLUTE NO-LOGO-FILTERS
+   2026-08-07
+   Render all three portal logo images in their native colors.
+   No brightness, contrast, saturation, grayscale, sepia,
+   drop-shadow filter, blend mode, or filter-based logo animation.
+   ========================================================= */
+
+.portal-link--ai,
+.portal-link--art,
+.portal-link--brand,
+.portal-link--ai:hover,
+.portal-link--art:hover,
+.portal-link--brand:hover,
+.portal-link--ai:focus-visible,
+.portal-link--art:focus-visible,
+.portal-link--brand:focus-visible,
+.hero-logo-stage--ai,
+.hero-logo-stage--sigil,
+.hero-crest,
+.ai-sphere,
+.hero-medallion,
+.hero-crest__medallion {
+  filter: none !important;
+  -webkit-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.hero-logo-stage--ai .official-logo,
+.hero-logo-stage--sigil .hero-medallion-face,
+.hero-crest .hero-crest__face,
+.portal-link--ai:hover .official-logo,
+.portal-link--art:hover .hero-medallion-face,
+.portal-link--brand:hover .hero-crest__face,
+.portal-link--ai:focus-visible .official-logo,
+.portal-link--art:focus-visible .hero-medallion-face,
+.portal-link--brand:focus-visible .hero-crest__face {
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  box-shadow: none !important;
+  animation: none !important;
+  will-change: transform !important;
+}
+
+.hero-logo-stage--ai .ai-logo-fill {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+@media screen and (max-width: 900px), screen and (pointer: coarse) {
+  .portal-link--ai,
+  .portal-link--art,
+  .portal-link--brand,
+  .portal-link--ai:hover,
+  .portal-link--art:hover,
+  .portal-link--brand:hover,
+  .portal-link--ai:focus-visible,
+  .portal-link--art:focus-visible,
+  .portal-link--brand:focus-visible,
+  .hero-logo-stage--ai,
+  .hero-logo-stage--sigil,
+  .hero-crest,
+  .ai-sphere,
+  .hero-medallion,
+  .hero-crest__medallion,
+  .hero-logo-stage--ai .official-logo,
+  .hero-logo-stage--sigil .hero-medallion-face,
+  .hero-crest .hero-crest__face {
+    filter: none !important;
+    -webkit-filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .hero-logo-stage--ai .official-logo,
+  .hero-logo-stage--sigil .hero-medallion-face,
+  .hero-crest .hero-crest__face {
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: none !important;
+    animation: none !important;
+  }
+}
+
