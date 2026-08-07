@@ -1,0 +1,100 @@
+/* =========================================================
+   DARKIMAGES.COM — ORIGINAL LOGO COLORS / NO FILTERS
+   2026-08-07
+   Purpose: show all three logo image assets exactly in their
+   native colors, with no CSS color grading, sepia, grayscale,
+   brightness/contrast/saturation filters, or blend-mode tinting.
+   ========================================================= */
+
+/* Remove filter/color processing from each logo and every parent
+   in its rendering chain so parent filters cannot recolor children. */
+.portal-link--ai,
+.portal-link--ai .hero-logo-stage--ai,
+.portal-link--ai .ai-sphere,
+.portal-link--ai .official-logo,
+.portal-link--art,
+.portal-link--art .hero-logo-stage--sigil,
+.portal-link--art .hero-medallion,
+.portal-link--art .hero-medallion-face,
+.portal-link--brand,
+.portal-link--brand .hero-crest,
+.portal-link--brand .hero-crest__medallion,
+.portal-link--brand .hero-crest__face {
+  filter: none !important;
+  -webkit-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Keep the actual image pixels fully visible and ungraded. */
+.portal-link--ai .official-logo,
+.portal-link--art .hero-medallion-face,
+.portal-link--brand .hero-crest__face {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal !important;
+  background: transparent !important;
+}
+
+/* The AI duplicate fill was used as a tonal/color layer. The uploaded
+   logo image itself is now the only artwork layer for that emblem. */
+.portal-link--ai .ai-logo-fill {
+  display: none !important;
+  opacity: 0 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Prevent hover/focus states and mobile rules from reintroducing grading. */
+.portal-link--ai:hover .official-logo,
+.portal-link--ai:focus-visible .official-logo,
+.portal-link--art:hover .hero-medallion-face,
+.portal-link--art:focus-visible .hero-medallion-face,
+.portal-link--brand:hover .hero-crest__face,
+.portal-link--brand:focus-visible .hero-crest__face,
+.portal-link--ai:hover,
+.portal-link--art:hover,
+.portal-link--brand:hover,
+.portal-link--ai:focus-visible,
+.portal-link--art:focus-visible,
+.portal-link--brand:focus-visible {
+  filter: none !important;
+  -webkit-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+@media screen and (max-width: 900px), screen and (pointer: coarse) {
+  .portal-link--ai,
+  .portal-link--ai .hero-logo-stage--ai,
+  .portal-link--ai .ai-sphere,
+  .portal-link--ai .official-logo,
+  .portal-link--art,
+  .portal-link--art .hero-logo-stage--sigil,
+  .portal-link--art .hero-medallion,
+  .portal-link--art .hero-medallion-face,
+  .portal-link--brand,
+  .portal-link--brand .hero-crest,
+  .portal-link--brand .hero-crest__medallion,
+  .portal-link--brand .hero-crest__face {
+    filter: none !important;
+    -webkit-filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .portal-link--ai .official-logo,
+  .portal-link--art .hero-medallion-face,
+  .portal-link--brand .hero-crest__face {
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+}
