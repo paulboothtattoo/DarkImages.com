@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Michroma&family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=MOBILE-HERO-TOP-FIX-V2-20260807" />
+  <link rel="stylesheet" href="styles.css?v=MOBILE-HERO-TOP-FIX-V3-20260807" />
   <style>
     html, body { background: #000 !important; }
     .page-transition {
@@ -55,7 +55,7 @@
 
       html.witches-revealed .darkimages-site {
         background-image: url('assets/witches-bg-mobile.png') !important;
-        background-position: center 20% !important;
+        background-position: center top !important;
         background-size: 122% auto !important;
         background-repeat: no-repeat !important;
         background-attachment: scroll !important;
@@ -64,7 +64,7 @@
 
     @media (max-width: 560px) {
       html.witches-revealed .darkimages-site {
-        background-position: center 18% !important;
+        background-position: center top !important;
         background-size: 132% auto !important;
       }
     }
@@ -152,7 +152,7 @@
       </div>
     </section>
   </main>
-  <script src="script.js?v=logos-dimmed-20260805k"></script>
+  <script src="script.js?v=scream-music-sync-20260807a"></script>
 
   <script id="witches-jumpscare">
     (() => {
@@ -160,7 +160,7 @@
 
       const DELAY_MIN = 6000;
       const DELAY_MAX = 9000;
-      const scream = new Audio("assets/audio/girl-scream.mp3");
+      const scream = new Audio("assets/audio/girl-scream.mp3?v=20260807b");
       scream.preload = "auto";
       scream.volume = 0.82;
 
@@ -205,6 +205,9 @@
           scream.currentTime = 0;
           await scream.play();
           audioUnlocked = true;
+
+          /* Start the background music at the same moment the real scream begins. */
+          window.dispatchEvent(new Event("darkimages:scream-played"));
         } catch {
           /* Browsers can block delayed audio until the visitor interacts. */
         }

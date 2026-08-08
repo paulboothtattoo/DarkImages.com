@@ -2425,8 +2425,18 @@ html.witches-revealed .hero-artwork-image {
 
   html.witches-revealed .darkimages-site {
     background-image: url('assets/witches-bg-mobile.png') !important;
-    background-position: center 26% !important;
-    background-size: cover !important;
+    /* Anchor the existing image scale to the viewport top. Percentage Y positions
+       create a large empty band when the page is taller than the image. */
+    background-position: center top !important;
+    background-size: 122% auto !important;
     background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+  }
+}
+
+@media (max-width: 560px) {
+  html.witches-revealed .darkimages-site {
+    background-position: center top !important;
+    background-size: 132% auto !important;
   }
 }

@@ -100,8 +100,16 @@
       hoverSound.pause();
       hoverSound.currentTime = 0;
       hoverSound.volume = originalVolume;
+      /* Unlock the background music element during the user's gesture,
+         but keep it silent and stopped until the scream actually plays. */
+      const backgroundOriginalVolume = backgroundSound.volume;
+      backgroundSound.volume = 0;
+      await backgroundSound.play();
+      backgroundSound.pause();
+      backgroundSound.currentTime = 0;
+      backgroundSound.volume = backgroundOriginalVolume;
+
       audioUnlocked = true;
-      await startBackgroundSound();
       return true;
     } catch {
       hoverSound.volume = 0.32;
@@ -139,13 +147,17 @@
 
   const firstInteractionUnlock = async () => {
     await unlockAudio();
-    await startBackgroundSound();
     window.removeEventListener('pointerdown', firstInteractionUnlock);
     window.removeEventListener('keydown', firstInteractionUnlock);
   };
 
   window.addEventListener('pointerdown', firstInteractionUnlock, { passive: true });
   window.addEventListener('keydown', firstInteractionUnlock);
+
+  /* The music begins only when the real jumpscare scream successfully starts. */
+  window.addEventListener('darkimages:scream-played', () => {
+    startBackgroundSound();
+  });
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
