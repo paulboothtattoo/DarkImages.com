@@ -1,45 +1,17 @@
-darkimages.com
-================
+DARKIMAGES.COM — WITCHES BACKGROUND JUMPSCARE PATCH
 
-Standalone static landing page that uses the three-witch artwork as the full-page visual background and places three animated logo portals in front of it.
+Replace the site's current index.html with the included index.html.
+Copy the included assets/audio/girl-scream file into the site's assets/audio folder.
 
-WHAT CHANGED
-------------
-- Background image now uses a contained fit so the faces are smaller and no longer heavily cropped.
-- The three portal logos were rebuilt to follow the original hero logo animation styles from:
-  - PaulBooth.ai
-  - PaulBoothArt.com
-  - PaulBoothBrand.com
+Behavior:
+- Existing page/logos load normally.
+- Existing witches artwork stays invisible for a random 6–9 seconds.
+- Witches artwork appears instantly with no fade or zoom.
+- It stays visible after appearing.
+- Existing desktop faceMorphFilter warping remains intact.
+- Mobile restores the existing witches-bg-mobile.png background at reveal.
+- No existing logo filters or logo artwork are changed.
 
-FILES
------
-- index.html
-- styles.css
-- script.js
-- README.txt
-- assets/witches-bg.png
-- assets/pb-brand-monogram-cutout.png
-
-NOTES
------
-- The PaulBooth.ai and PaulBoothArt.com logo images are loaded from their site asset URLs so the page can use the official live logo images.
-- The PaulBoothBrand.com emblem is included locally in /assets.
-- No build step is required.
-
-QUICK LOCAL PREVIEW
--------------------
-From this folder run:
-  python -m http.server 8080
-Then open:
-  http://localhost:8080
-
-LATEST UPDATE
--------------
-- All three logos now sit inside 3D glass spheres.
-- All orbiting orbs / orbital elements were removed from all three logos.
-
-- The background artwork now also sits inside a large 3D glass sphere.
-
-- The large background glass sphere now moves with desktop mouse movement using smooth parallax and 3D tilt.
-
-- Inner-sphere shadows were substantially deepened on all four spheres.
+Browser note:
+Chrome/Safari may block delayed audio until the visitor has interacted with the page.
+The visual reveal is not blocked.

@@ -27,6 +27,40 @@
     }
     .page-transition.is-ready { opacity: 0; }
     .page-transition.is-leaving { opacity: 1; pointer-events: auto; }
+
+    /* =========================================================
+       DARKIMAGES — DELAYED WITCHES BACKGROUND REVEAL
+       The existing witches artwork stays completely hidden for
+       several seconds, then appears instantly and remains visible.
+       Existing faceMorphFilter warping is preserved.
+       ========================================================= */
+
+    html:not(.witches-revealed) .hero-artwork-image {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: none !important;
+    }
+
+    html.witches-revealed .hero-artwork-image {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transition: none !important;
+    }
+
+    @media (max-width: 900px) {
+      html:not(.witches-revealed) .darkimages-site {
+        background-image: none !important;
+        background-color: #000 !important;
+      }
+
+      html.witches-revealed .darkimages-site {
+        background-image: url('assets/witches-bg-mobile.png') !important;
+        background-position: center 26% !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -112,5 +146,68 @@
     </section>
   </main>
   <script src="script.js?v=logos-dimmed-20260805k"></script>
+
+  <script id="witches-jumpscare">
+    (() => {
+      "use strict";
+
+      const DELAY_MIN = 6000;
+      const DELAY_MAX = 9000;
+      const scream = new Audio("assets/audio/girl-scream.mp3");
+      scream.preload = "auto";
+      scream.volume = 0.82;
+
+      let audioUnlocked = false;
+      let revealed = false;
+
+      async function unlockScream() {
+        if (audioUnlocked) return true;
+
+        try {
+          const originalVolume = scream.volume;
+          scream.volume = 0;
+          await scream.play();
+          scream.pause();
+          scream.currentTime = 0;
+          scream.volume = originalVolume;
+          audioUnlocked = true;
+          return true;
+        } catch {
+          scream.volume = 0.82;
+          return false;
+        }
+      }
+
+      document.addEventListener("pointerdown", unlockScream, {
+        once: true,
+        passive: true
+      });
+
+      document.addEventListener("keydown", unlockScream, {
+        once: true
+      });
+
+      async function revealWitches() {
+        if (revealed) return;
+        revealed = true;
+
+        /* Instant reveal. No fade, zoom, overlay, or replacement image. */
+        document.documentElement.classList.add("witches-revealed");
+
+        try {
+          scream.currentTime = 0;
+          await scream.play();
+          audioUnlocked = true;
+        } catch {
+          /* Browsers can block delayed audio until the visitor interacts. */
+        }
+      }
+
+      window.addEventListener("load", () => {
+        const delay = DELAY_MIN + Math.random() * (DELAY_MAX - DELAY_MIN);
+        window.setTimeout(revealWitches, delay);
+      }, { once: true });
+    })();
+  </script>
 </body>
 </html>
