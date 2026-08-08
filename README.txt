@@ -1,17 +1,18 @@
-DARKIMAGES.COM — WITCHES BACKGROUND JUMPSCARE PATCH
+DARKIMAGES.COM — MOBILE WITCHES SIZE CORRECTION
 
-Replace the site's current index.html with the included index.html.
-Copy the included assets/audio/girl-scream file into the site's assets/audio folder.
+This corrects only the jumpscare reveal sizing on phones.
 
-Behavior:
-- Existing page/logos load normally.
-- Existing witches artwork stays invisible for a random 6–9 seconds.
-- Witches artwork appears instantly with no fade or zoom.
-- It stays visible after appearing.
-- Existing desktop faceMorphFilter warping remains intact.
-- Mobile restores the existing witches-bg-mobile.png background at reveal.
-- No existing logo filters or logo artwork are changed.
+Preserved:
+- delayed 6–9 second witches reveal
+- scream behavior
+- abrupt/no-fade appearance
+- witches stay visible after reveal
+- existing desktop face warping
+- existing site/logo layout
 
-Browser note:
-Chrome/Safari may block delayed audio until the visitor has interacted with the page.
-The visual reveal is not blocked.
+Mobile sizing restored:
+- <= 900px: background-size 122% auto; background-position center 20%
+- <= 560px: background-size 132% auto; background-position center 18%
+
+Replace the current index.html with this index.html.
+The included scream file is unchanged and only included so the patch remains self-contained.
