@@ -100,15 +100,6 @@
       hoverSound.pause();
       hoverSound.currentTime = 0;
       hoverSound.volume = originalVolume;
-      /* Unlock the background music element during the user's gesture,
-         but keep it silent and stopped until the scream actually plays. */
-      const backgroundOriginalVolume = backgroundSound.volume;
-      backgroundSound.volume = 0;
-      await backgroundSound.play();
-      backgroundSound.pause();
-      backgroundSound.currentTime = 0;
-      backgroundSound.volume = backgroundOriginalVolume;
-
       audioUnlocked = true;
       return true;
     } catch {
@@ -142,11 +133,13 @@
     portal.addEventListener('focus', playHoverSound);
     portal.addEventListener('pointerdown', async () => {
       await unlockAudio();
+      await startBackgroundSound();
     }, { passive: true });
   });
 
   const firstInteractionUnlock = async () => {
     await unlockAudio();
+    await startBackgroundSound();
     window.removeEventListener('pointerdown', firstInteractionUnlock);
     window.removeEventListener('keydown', firstInteractionUnlock);
   };
@@ -154,10 +147,9 @@
   window.addEventListener('pointerdown', firstInteractionUnlock, { passive: true });
   window.addEventListener('keydown', firstInteractionUnlock);
 
-  /* The music begins only when the real jumpscare scream successfully starts. */
-  window.addEventListener('darkimages:scream-played', () => {
-    startBackgroundSound();
-  });
+  /* Start the background score as soon as the page script loads.
+     Browsers that block audible autoplay will start it on the visitor's first interaction. */
+  startBackgroundSound();
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {

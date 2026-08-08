@@ -152,7 +152,7 @@
       </div>
     </section>
   </main>
-  <script src="script.js?v=scream-music-sync-20260807a"></script>
+  <script src="script.js?v=music-on-load-random-scream-20260807b"></script>
 
   <script id="witches-jumpscare">
     (() => {
@@ -206,8 +206,7 @@
           await scream.play();
           audioUnlocked = true;
 
-          /* Start the background music at the same moment the real scream begins. */
-          window.dispatchEvent(new Event("darkimages:scream-played"));
+
         } catch {
           /* Browsers can block delayed audio until the visitor interacts. */
         }

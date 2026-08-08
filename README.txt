@@ -1,18 +1,12 @@
-DARKIMAGES.COM — MOBILE WITCHES SIZE CORRECTION
+DARKIMAGES.COM — MUSIC ON LOAD + RANDOM SCREAM
 
-This corrects only the jumpscare reveal sizing on phones.
+Behavior:
+- Background music attempts to begin immediately when the page opens.
+- If a browser blocks audible autoplay, the music begins on the visitor's first tap/click/key press.
+- Girl scream remains separate and plays once at a random 6–9 second delay.
+- Witch reveal remains tied to the random scream timing.
+- Existing mobile background sizing/top fix is preserved.
+- Existing logos, links, face warping, and layout are unchanged.
 
-Preserved:
-- delayed 6–9 second witches reveal
-- scream behavior
-- abrupt/no-fade appearance
-- witches stay visible after reveal
-- existing desktop face warping
-- existing site/logo layout
-
-Mobile sizing restored:
-- <= 900px: background-size 122% auto; background-position center 20%
-- <= 560px: background-size 132% auto; background-position center 18%
-
-Replace the current index.html with this index.html.
-The included scream file is unchanged and only included so the patch remains self-contained.
+Browser note:
+Safari/iPhone and some other browsers may block audible autoplay until a user interacts with the page. The fallback is built in automatically.
