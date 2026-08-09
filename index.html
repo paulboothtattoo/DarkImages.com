@@ -29,14 +29,17 @@
   <meta name="twitter:image" content="https://darkimages.com/assets/og-image.jpg" />
   <meta name="twitter:image:alt" content="Dark surrealist artwork by Paul Booth" />
 
-  <link rel="icon" type="image/png" href="assets/darkimages-icon.png?v=20260807" />
-  <link rel="shortcut icon" type="image/png" href="assets/darkimages-icon.png?v=20260807" />
-  <link rel="apple-touch-icon" href="assets/darkimages-icon.png?v=20260807" />
+  <link rel="icon" type="image/png" href="assets/darkimages-icon-512.png?v=20260809" />
+  <link rel="shortcut icon" type="image/png" href="assets/darkimages-icon-512.png?v=20260809" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260809" />
+
+  <!-- LCP candidate: page background is a CSS image, so the preload gives it a head start -->
+  <link rel="preload" as="image" href="assets/fixed-bg-blackwhite.webp" type="image/webp" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Michroma&family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=SEO-INTRO-20260809" />
+  <link rel="stylesheet" href="styles.css?v=WEBP-ASSETS-20260809" />
   <style>
     html, body { background: #000 !important; }
     .page-transition {
@@ -77,7 +80,7 @@
       }
 
       html.witches-revealed .darkimages-site {
-        background-image: url('assets/witches-bg-mobile.png') !important;
+        background-image: url('assets/witches-bg-mobile.webp') !important;
         background-position: center top !important;
         background-size: 122% auto !important;
         background-repeat: no-repeat !important;
@@ -166,7 +169,7 @@
         <div class="background-sphere">
           <div class="background-sphere-depth"></div>
           <div class="background-sphere-rim"></div>
-          <img src="assets/witches-bg.png" alt="" class="hero-artwork-image" />
+          <img src="assets/witches-bg.webp" alt="" class="hero-artwork-image" />
           <div class="background-sphere-glass"></div>
         </div>
       </div>
@@ -190,7 +193,7 @@
             <div class="hero-logo-aura" aria-hidden="true"></div>
             <div class="hero-logo-plinth" aria-hidden="true"></div>
             <div class="hero-medallion" aria-label="Paul Booth Art emblem">
-              <img class="hero-medallion-face" src="assets/paulboothart-logo-crimson-20260807.png" alt="PaulBoothArt.com official logo" />
+              <img class="hero-medallion-face" src="assets/paulboothart-logo-crimson-20260807.webp" alt="PaulBoothArt.com official logo" />
             </div>
           </div>
           <span class="portal-caption">PaulBoothArt.com</span>
@@ -201,7 +204,7 @@
             <div class="hero-logo-glow" aria-hidden="true"></div>
             <div class="ai-sphere" aria-hidden="true">
               <div class="ai-logo-fill" aria-hidden="true"></div>
-              <img class="official-logo" src="assets/paulbooth-ai-logo-swapped.png" alt="PaulBooth.ai official biomechanical logo" />
+              <img class="official-logo" src="assets/paulbooth-ai-logo-swapped.webp" alt="PaulBooth.ai official biomechanical logo" />
             </div>
           </div>
           <span class="portal-caption">PaulBooth.ai</span>
@@ -220,7 +223,7 @@
             <div class="hero-crest__nodes hero-crest__nodes--two" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="hero-crest__nodes hero-crest__nodes--three" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
             <div class="hero-crest__medallion">
-              <img class="hero-crest__face" src="assets/pb-brand-monogram-cutout.png" alt="PaulBoothBrand.com emblem" />
+              <img class="hero-crest__face" src="assets/pb-brand-monogram-cutout.webp" alt="PaulBoothBrand.com emblem" />
             </div>
           </div>
           <span class="portal-caption">PaulBoothBrand.com</span>

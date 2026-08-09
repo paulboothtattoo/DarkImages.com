@@ -28,7 +28,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   isolation: isolate;
   background-color: #000;
-  background-image: url('assets/fixed-bg-blackwhite.png');
+  background-image: url('assets/fixed-bg-blackwhite.webp');
   background-position: center center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -666,7 +666,7 @@ a { color: inherit; text-decoration: none; }
     padding: 0;
     isolation: isolate;
     background-color: #000;
-    background-image: url('assets/witches-bg-mobile.png');
+    background-image: url('assets/witches-bg-mobile.webp');
     background-position: center 26%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -855,8 +855,8 @@ a { color: inherit; text-decoration: none; }
   background:
     radial-gradient(circle at 50% 20%, rgba(58,36,33,.72), rgba(34,20,19,.86) 22%, rgba(78,14,14,.58) 42%, rgba(36,8,8,.46) 62%, rgba(0,0,0,0) 100%),
     linear-gradient(180deg, rgba(42,26,24,.88) 0%, rgba(26,16,16,.92) 34%, rgba(64,14,14,.76) 62%, rgba(22,8,8,.68) 100%);
-  -webkit-mask-image: url('assets/paulbooth-ai-logo-swapped.png');
-  mask-image: url('assets/paulbooth-ai-logo-swapped.png');
+  -webkit-mask-image: url('assets/paulbooth-ai-logo-swapped.webp');
+  mask-image: url('assets/paulbooth-ai-logo-swapped.webp');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -2424,7 +2424,7 @@ html.witches-revealed .hero-artwork-image {
   }
 
   html.witches-revealed .darkimages-site {
-    background-image: url('assets/witches-bg-mobile.png') !important;
+    background-image: url('assets/witches-bg-mobile.webp') !important;
     /* Anchor the existing image scale to the viewport top. Percentage Y positions
        create a large empty band when the page is taller than the image. */
     background-position: center top !important;
