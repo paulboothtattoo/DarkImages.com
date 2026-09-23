@@ -2528,3 +2528,29 @@ html.witches-revealed .hero-artwork-image {
   .site-intro { padding-left: 22px; padding-right: 22px; }
   .site-intro h2 { margin-top: 36px; }
 }
+
+/* =========================================================
+   LEGAL FOOTER
+   Sits below the gateway intro and carries the privacy link.
+   ========================================================= */
+.site-legal {
+  position: relative;
+  z-index: 2;
+  background: #050505;
+  border-top: 1px solid var(--line);
+  padding: 26px 20px 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Oxanium", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.site-legal a { color: var(--muted); text-decoration: none; }
+.site-legal a:hover, .site-legal a:focus-visible { color: var(--gold); text-decoration: underline; }

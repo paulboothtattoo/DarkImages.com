@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Michroma&family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=WEBP-ASSETS-20260809" />
+  <link rel="stylesheet" href="styles.css?v=legal-footer-20260923" />
   <style>
     html, body { background: #000 !important; }
     .page-transition {
@@ -285,6 +285,15 @@
       <p class="site-intro__close">DarkImages.com is where that world begins.</p>
     </div>
   </section>
+
+  <footer class="site-legal" aria-label="Site information">
+    <span>&copy; <span id="legal-year"></span> Paul Booth. All rights reserved.</span>
+    <a href="/privacy/">Privacy</a>
+  </footer>
+
+  <script>
+    document.getElementById("legal-year").textContent = new Date().getFullYear();
+  </script>
 
   <script src="script.js?v=music-on-load-random-scream-4-6-20260807c"></script>
 
