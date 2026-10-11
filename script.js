@@ -59,33 +59,6 @@
   hoverSound.preload = 'auto';
   hoverSound.volume = 0.32;
 
-  const backgroundSound = new Audio('assets/audio/creepy-broken-music-box-loop.mp3');
-  backgroundSound.preload = 'auto';
-  backgroundSound.loop = true;
-  backgroundSound.volume = 0;
-  let backgroundStarted = false;
-  let backgroundFadeFrame = 0;
-
-  const startBackgroundSound = async () => {
-    if (backgroundStarted) return;
-    try {
-      await backgroundSound.play();
-      backgroundStarted = true;
-      const targetVolume = 0.105;
-      const fadeStart = performance.now();
-      const fadeDuration = 2600;
-      const fadeIn = (now) => {
-        const progress = Math.min(1, (now - fadeStart) / fadeDuration);
-        backgroundSound.volume = targetVolume * progress;
-        if (progress < 1) backgroundFadeFrame = requestAnimationFrame(fadeIn);
-      };
-      cancelAnimationFrame(backgroundFadeFrame);
-      backgroundFadeFrame = requestAnimationFrame(fadeIn);
-    } catch {
-      backgroundStarted = false;
-    }
-  };
-
   let audioUnlocked = false;
   let lastPlayedAt = 0;
   const cooldownMs = 650;
@@ -131,15 +104,11 @@
   portals.forEach((portal) => {
     portal.addEventListener('mouseenter', playHoverSound);
     portal.addEventListener('focus', playHoverSound);
-    portal.addEventListener('pointerdown', async () => {
-      await unlockAudio();
-      await startBackgroundSound();
-    }, { passive: true });
+    portal.addEventListener('pointerdown', unlockAudio, { passive: true });
   });
 
   const firstInteractionUnlock = async () => {
     await unlockAudio();
-    await startBackgroundSound();
     window.removeEventListener('pointerdown', firstInteractionUnlock);
     window.removeEventListener('keydown', firstInteractionUnlock);
   };
@@ -147,17 +116,6 @@
   window.addEventListener('pointerdown', firstInteractionUnlock, { passive: true });
   window.addEventListener('keydown', firstInteractionUnlock);
 
-  /* Start the background score as soon as the page script loads.
-     Browsers that block audible autoplay will start it on the visitor's first interaction. */
-  startBackgroundSound();
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      backgroundSound.pause();
-    } else if (backgroundStarted) {
-      backgroundSound.play().catch(() => {});
-    }
-  });
 })();
 
 

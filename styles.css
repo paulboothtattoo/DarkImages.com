@@ -2399,49 +2399,6 @@ a { color: inherit; text-decoration: none; }
   }
 }
 /* =========================================================
-   DARKIMAGES — WITCH BACKGROUND JUMPSCARE
-   Hidden at first. Appears instantly and remains.
-   ========================================================= */
-
-/* DESKTOP — hide actual witches artwork initially */
-html:not(.witches-revealed) .hero-artwork-image {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-/* Absolutely NO fade when it appears */
-html.witches-revealed .hero-artwork-image {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transition: none !important;
-}
-
-/* MOBILE — witches image is used as the page background */
-@media (max-width: 900px) {
-  html:not(.witches-revealed) .darkimages-site {
-    background-image: none !important;
-    background-color: #000 !important;
-  }
-
-  html.witches-revealed .darkimages-site {
-    background-image: url('assets/witches-bg-mobile.webp') !important;
-    /* Anchor the existing image scale to the viewport top. Percentage Y positions
-       create a large empty band when the page is taller than the image. */
-    background-position: center top !important;
-    background-size: 122% auto !important;
-    background-repeat: no-repeat !important;
-    background-attachment: scroll !important;
-  }
-}
-
-@media (max-width: 560px) {
-  html.witches-revealed .darkimages-site {
-    background-position: center top !important;
-    background-size: 132% auto !important;
-  }
-}
-
-/* =========================================================
    SITE INTRO — indexable copy below the hero
    Sibling of .darkimages-site, so the full-viewport hero
    experience above is completely unaffected.

@@ -33,13 +33,16 @@
   <link rel="shortcut icon" type="image/png" href="assets/darkimages-icon-512.png?v=20260809" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260809" />
 
-  <!-- LCP candidate: page background is a CSS image, so the preload gives it a head start -->
-  <link rel="preload" as="image" href="assets/fixed-bg-blackwhite.webp" type="image/webp" fetchpriority="high" />
+  <!-- The witches artwork is the main image: preload the right one per layout so it
+       starts downloading before the CSS is parsed. Mobile never uses the desktop images. -->
+  <link rel="preload" as="image" href="assets/witches-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)" />
+  <link rel="preload" as="image" href="assets/fixed-bg-blackwhite.webp" type="image/webp" media="(min-width: 901px)" />
+  <link rel="preload" as="image" href="assets/witches-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Michroma&family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=legal-footer-20260923" />
+  <link rel="stylesheet" href="styles.css?v=instant-witches-20261011" />
   <style>
     html, body { background: #000 !important; }
     .page-transition {
@@ -54,46 +57,6 @@
     .page-transition.is-ready { opacity: 0; }
     .page-transition.is-leaving { opacity: 1; pointer-events: auto; }
 
-    /* =========================================================
-       DARKIMAGES — DELAYED WITCHES BACKGROUND REVEAL
-       The existing witches artwork stays completely hidden for
-       several seconds, then appears instantly and remains visible.
-       Existing faceMorphFilter warping is preserved.
-       ========================================================= */
-
-    html:not(.witches-revealed) .hero-artwork-image {
-      opacity: 0 !important;
-      visibility: hidden !important;
-      transition: none !important;
-    }
-
-    html.witches-revealed .hero-artwork-image {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transition: none !important;
-    }
-
-    @media (max-width: 900px) {
-      html:not(.witches-revealed) .darkimages-site {
-        background-image: none !important;
-        background-color: #000 !important;
-      }
-
-      html.witches-revealed .darkimages-site {
-        background-image: url('assets/witches-bg-mobile.webp') !important;
-        background-position: center top !important;
-        background-size: 122% auto !important;
-        background-repeat: no-repeat !important;
-        background-attachment: scroll !important;
-      }
-    }
-
-    @media (max-width: 560px) {
-      html.witches-revealed .darkimages-site {
-        background-position: center top !important;
-        background-size: 132% auto !important;
-      }
-    }
   </style>
 
   <script type="application/ld+json">
@@ -169,7 +132,7 @@
         <div class="background-sphere">
           <div class="background-sphere-depth"></div>
           <div class="background-sphere-rim"></div>
-          <img src="assets/witches-bg.webp" alt="" class="hero-artwork-image" />
+          <img src="assets/witches-bg.webp" alt="" class="hero-artwork-image" width="2048" height="2048" fetchpriority="high" decoding="async" />
           <div class="background-sphere-glass"></div>
         </div>
       </div>
@@ -295,72 +258,7 @@
     document.getElementById("legal-year").textContent = new Date().getFullYear();
   </script>
 
-  <script src="script.js?v=music-on-load-random-scream-4-6-20260807c"></script>
-
-  <script id="witches-jumpscare">
-    (() => {
-      "use strict";
-
-      const DELAY_MIN = 4000;
-      const DELAY_MAX = 6000;
-      const scream = new Audio("assets/audio/girl-scream.mp3?v=20260807c");
-      scream.preload = "auto";
-      scream.volume = 0.82;
-
-      let audioUnlocked = false;
-      let revealed = false;
-
-      async function unlockScream() {
-        if (audioUnlocked) return true;
-
-        try {
-          const originalVolume = scream.volume;
-          scream.volume = 0;
-          await scream.play();
-          scream.pause();
-          scream.currentTime = 0;
-          scream.volume = originalVolume;
-          audioUnlocked = true;
-          return true;
-        } catch {
-          scream.volume = 0.82;
-          return false;
-        }
-      }
-
-      document.addEventListener("pointerdown", unlockScream, {
-        once: true,
-        passive: true
-      });
-
-      document.addEventListener("keydown", unlockScream, {
-        once: true
-      });
-
-      async function revealWitches() {
-        if (revealed) return;
-        revealed = true;
-
-        /* Instant reveal. No fade, zoom, overlay, or replacement image. */
-        document.documentElement.classList.add("witches-revealed");
-
-        try {
-          scream.currentTime = 0;
-          await scream.play();
-          audioUnlocked = true;
-
-
-        } catch {
-          /* Browsers can block delayed audio until the visitor interacts. */
-        }
-      }
-
-      window.addEventListener("load", () => {
-        const delay = DELAY_MIN + Math.random() * (DELAY_MAX - DELAY_MIN);
-        window.setTimeout(revealWitches, delay);
-      }, { once: true });
-    })();
-  </script>
+  <script src="script.js?v=no-music-20261011"></script>
 
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "63b26f92c9b5404fa06e555ee1a7e6bc"}'></script>
