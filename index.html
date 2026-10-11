@@ -29,20 +29,19 @@
   <meta name="twitter:image" content="https://darkimages.com/assets/og-image.jpg" />
   <meta name="twitter:image:alt" content="Dark surrealist artwork by Paul Booth" />
 
-  <link rel="icon" type="image/png" href="assets/darkimages-icon-512.png?v=20260809" />
-  <link rel="shortcut icon" type="image/png" href="assets/darkimages-icon-512.png?v=20260809" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/darkimages-icon-32.png?v=20261011" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/darkimages-icon-192.png?v=20261011" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260809" />
 
   <!-- The witches artwork is the main image: preload the right one per layout so it
        starts downloading before the CSS is parsed. Mobile never uses the desktop images. -->
-  <link rel="preload" as="image" href="assets/witches-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)" />
+  <link rel="preload" as="image" href="assets/witches-bg.webp" imagesrcset="assets/witches-bg-1100.webp 1100w, assets/witches-bg-1600.webp 1600w, assets/witches-bg.webp 2048w" imagesizes="1100px" type="image/webp" fetchpriority="high" media="(min-width: 901px)" />
   <link rel="preload" as="image" href="assets/fixed-bg-blackwhite.webp" type="image/webp" media="(min-width: 901px)" />
   <link rel="preload" as="image" href="assets/witches-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Michroma&family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=instant-witches-20261011" />
+  <link rel="preload" as="font" href="assets/fonts/cinzel-latin.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css?v=20261011" />
+  <link rel="stylesheet" href="styles.css?v=20261011b" />
   <style>
     html, body { background: #000 !important; }
     .page-transition {
@@ -50,7 +49,7 @@
       inset: 0;
       z-index: 99999;
       background: #000;
-      opacity: 1;
+      opacity: 0;
       pointer-events: none;
       transition: opacity .45s ease;
     }
@@ -132,7 +131,12 @@
         <div class="background-sphere">
           <div class="background-sphere-depth"></div>
           <div class="background-sphere-rim"></div>
-          <img src="assets/witches-bg.webp" alt="" class="hero-artwork-image" width="2048" height="2048" fetchpriority="high" decoding="async" />
+          <picture>
+            <!-- Hidden on mobile, where the page background shows the mobile artwork; pointing
+                 at that same file keeps phones from downloading the desktop image as well. -->
+            <source media="(max-width: 900px)" srcset="assets/witches-bg-mobile.webp" />
+            <img src="assets/witches-bg.webp" srcset="assets/witches-bg-1100.webp 1100w, assets/witches-bg-1600.webp 1600w, assets/witches-bg.webp 2048w" sizes="1100px" alt="" class="hero-artwork-image" width="2048" height="2048" fetchpriority="high" decoding="async" />
+          </picture>
           <div class="background-sphere-glass"></div>
         </div>
       </div>
@@ -258,7 +262,7 @@
     document.getElementById("legal-year").textContent = new Date().getFullYear();
   </script>
 
-  <script src="script.js?v=no-music-20261011"></script>
+  <script src="script.js?v=20261011b"></script>
 
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "63b26f92c9b5404fa06e555ee1a7e6bc"}'></script>
