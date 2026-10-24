@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy &mdash; DarkImages.com</title>
-  <meta name="description" content="How DarkImages.com handles visitor data. The site has no forms, sets no cookies, and uses only cookieless, aggregate analytics." />
+  <meta name="description" content="How DarkImages.com handles visitor data. The site has no forms, uses cookieless aggregate analytics, and runs Microsoft Clarity session recordings only with your consent where the law requires it." />
   <link rel="canonical" href="https://darkimages.com/privacy/" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#050505" />
@@ -13,20 +13,21 @@
 
   <link rel="stylesheet" href="/fonts.css?v=20261011" />
   <link rel="stylesheet" href="/legal.css?v=20260923" />
+  <link rel="stylesheet" href="/consent.css?v=20261024" />
 </head>
 <body>
   <main class="legal">
     <a class="legal-back" href="/">&larr; DarkImages.com</a>
 
     <h1>Privacy Policy</h1>
-    <p class="legal-updated">Last updated 11 October 2026</p>
+    <p class="legal-updated">Last updated 24 October 2026</p>
 
     <p class="legal-lede">
       DarkImages.com is a single static page: the front door to Paul Booth's
       other sites. It has no accounts, no forms, no shopping cart and no comment
-      system. It asks you for nothing and collects no personal information. The
-      only measurement it runs is a cookieless visit counter that cannot identify
-      you.
+      system. It asks you for nothing. To understand how the page is used, it
+      runs a cookieless visit counter and, where you allow it, a
+      session-recording tool that captures how the page is scrolled and clicked.
     </p>
 
     <h2>What this site collects</h2>
@@ -57,12 +58,60 @@
       <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a>.
     </p>
 
-    <h2>Cookies and browser storage</h2>
+    <h2>Session recordings and heatmaps</h2>
     <p>
-      This site sets no cookies of its own and stores nothing in your browser's
-      local or session storage. There is no advertising script, no tracking pixel
-      and no visitor profiling. Because nothing is stored on your device, there
-      is no consent banner to click through.
+      This site also uses
+      <a href="https://clarity.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Clarity</a>
+      to see how the page is actually used. Clarity records how you move
+      through the page &mdash; scrolling, clicks, taps and mouse movement &mdash;
+      and turns that into heatmaps and replayable session recordings, along
+      with technical details such as your browser, device type, screen size
+      and approximate location, which Microsoft derives from your IP address.
+      These are used only to find what is confusing, broken or overlooked.
+    </p>
+    <p>
+      Clarity uses cookies so that it can tell a returning visitor from a new
+      one, and so it only runs if you allow it &mdash; see the next section.
+      Clarity data is processed and stored by Microsoft under the
+      <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft Privacy Statement</a>.
+      This site runs Clarity for analytics only: its advertising features are
+      switched off.
+    </p>
+
+    <h2 id="cookies">Cookies and your choices</h2>
+    <p>
+      Microsoft Clarity is the only thing on this site that sets cookies, and it
+      is not needed for the site to work.
+    </p>
+    <ul>
+      <li>
+        <strong>If you are in Europe</strong> (the EU and EEA, the UK and
+        Switzerland, judged from your device's time zone), you are asked first,
+        and Clarity does not load unless you accept.
+      </li>
+      <li>
+        <strong>Everywhere else</strong>, it loads by default, and you can turn
+        it off at any time. If your browser sends a Global Privacy Control
+        signal, that is treated as a refusal wherever you are.
+      </li>
+    </ul>
+    <p>
+      If you decline, Clarity is not loaded at all. If you accept, Clarity sets
+      <code>_clck</code>, which recognises your browser for up to a year, and
+      <code>_clsk</code>, which links the pages of one visit and expires after a
+      day. It also keeps a little data in session storage that is cleared when
+      you close the tab, and Microsoft may set its own cookies on its own
+      domains, such as <code>clarity.ms</code> and <code>bing.com</code>, which
+      this site cannot remove.
+    </p>
+    <p>
+      Your choice is remembered in your browser's local storage, which is the
+      one thing this site stores for itself. You can change it whenever you
+      like: <button type="button" data-consent-open>change your cookie choice</button>.
+      Withdrawing consent removes Clarity's cookies from this site.
+    </p>
+    <p>
+      There is no advertising script and no tracking pixel.
     </p>
 
     <h2>What third parties may collect</h2>
@@ -84,11 +133,15 @@
       <li>
         <strong>Cloudflare</strong> provides the analytics described above.
       </li>
+      <li>
+        <strong>Microsoft</strong> provides Clarity, the session recording and
+        heatmap tool described above.
+      </li>
     </ul>
 
     <p>
-      Everything else on the page &mdash; the imagery, the fonts and the scripts
-      &mdash; is served from this site itself. There are no embedded players,
+      Everything else on the page &mdash; the imagery, the fonts and the other
+      scripts &mdash; is served from this site itself. There are no embedded players,
       social widgets or advertising networks.
     </p>
 
@@ -110,9 +163,11 @@
 
     <h2>Your rights</h2>
     <p>
-      Nothing identifying you is collected or stored by this site, and the
-      analytics are aggregate, so there is generally nothing held about you to
-      access, correct or delete. If you believe otherwise, or you want to ask how
+      Nothing you could be named from is collected by this site. The Cloudflare
+      analytics are aggregate, and Clarity recordings are tied only to a random
+      cookie ID, which you can stop at any time by changing your cookie choice
+      above or by using a content or tracker blocker. There is generally nothing
+      held about you to access, correct or delete. If you believe otherwise, or you want to ask how
       your information has been handled, get in touch and the request will be
       answered. Depending on where you live, you may also have the right to
       complain to your local data protection authority.
@@ -138,5 +193,8 @@
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "63b26f92c9b5404fa06e555ee1a7e6bc"}'></script>
   <!-- End Cloudflare Web Analytics -->
+
+  <!-- Cookie consent; loads Microsoft Clarity only once allowed -->
+  <script src="/consent.js?v=20261024" defer></script>
 </body>
 </html>

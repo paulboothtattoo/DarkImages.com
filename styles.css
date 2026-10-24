@@ -2511,3 +2511,5 @@ a { color: inherit; text-decoration: none; }
 
 .site-legal a { color: var(--muted); text-decoration: none; }
 .site-legal a:hover, .site-legal a:focus-visible { color: var(--gold); text-decoration: underline; }
+.site-legal button[data-consent-open] { color: var(--muted); text-decoration: none; }
+.site-legal button[data-consent-open]:hover, .site-legal button[data-consent-open]:focus-visible { color: var(--gold); text-decoration: underline; }

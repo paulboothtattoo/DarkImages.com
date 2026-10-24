@@ -1,0 +1,95 @@
+/* Cookie consent banner. Self-contained so it works on every page,
+   including /privacy/, which doesn't load styles.css.
+   Colours mirror the tokens in styles.css. */
+.consent-banner {
+  --consent-bg: rgba(4, 4, 4, .97);
+  --consent-text: #f2e7d7;
+  --consent-muted: rgba(240, 225, 208, .68);
+  --consent-line: rgba(184, 37, 25, .6);
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1000;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid var(--consent-line);
+  background: var(--consent-bg);
+  color: var(--consent-text);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .7);
+  font-family: Oxanium, Arial, sans-serif;
+}
+
+.consent-text {
+  margin: 0;
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--consent-muted);
+}
+
+.consent-text a {
+  color: var(--consent-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.consent-button {
+  border: 1px solid rgba(184, 37, 25, .75);
+  background: rgba(10, 10, 10, .6);
+  color: #f2e7d7;
+  padding: 12px 18px;
+  min-width: 104px;
+  font-family: Oxanium, sans-serif;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.consent-button:hover,
+.consent-button:focus-visible {
+  background: rgba(184, 37, 25, .3);
+}
+
+.consent-button:focus-visible {
+  outline: 1px solid #f2e7d7;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .consent-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .consent-actions .consent-button {
+    flex: 1;
+  }
+}
+
+/* Footer and policy triggers render as links. */
+button[data-consent-open] {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
